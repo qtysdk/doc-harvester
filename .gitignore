@@ -1,0 +1,7 @@
+output
+docharvester
+.DS_Store
+.idea/
+.envrc
+*.xml
+bin
