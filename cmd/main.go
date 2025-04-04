@@ -29,10 +29,8 @@ func ExploreWebsite(urlStr string, maxDepth int) {
 }
 
 // DownloadWebsite downloads website content and saves it locally
-func DownloadWebsite(url string, baseURL string, maxDepth int) {
-	// Create download context using XML storage
-	xmlFilePath := "docs.xml"
-	fmt.Printf("Using default XML output file: %s\n", xmlFilePath)
+func DownloadWebsite(url string, baseURL string, maxDepth int, xmlFilePath string) {
+	fmt.Printf("Using XML output file: %s\n", xmlFilePath)
 
 	// Ensure directory exists
 	dirPath := filepath.Dir(xmlFilePath)
@@ -113,6 +111,6 @@ func main() {
 		ExploreWebsite(url, *maxDepth)
 	} else {
 		fmt.Printf("Downloading content from URL: %s to XML file: %s with max depth: %d\n", url, xmlFilePath, *maxDepth)
-		DownloadWebsite(url, url, *maxDepth)
+		DownloadWebsite(url, url, *maxDepth, xmlFilePath)
 	}
 }
